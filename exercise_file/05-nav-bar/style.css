@@ -1,0 +1,36 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* nav , nav * {
+    border: 1px solid gray;
+} */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav h1 {
+    margin-left: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-right: 24px;
+}
+
+nav li {
+    margin: 8px;
+}
