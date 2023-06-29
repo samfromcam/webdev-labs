@@ -13,7 +13,7 @@ app = Flask(__name__)
 #########################
 # some global variables #
 #########################
-current_user = CurrentUser(first_name='Samnang', last_name='Nuonsinoeun', email='erub03@gmail.com', username='erub03')
+current_user = CurrentUser(first_name='Erick', last_name='Rubi', email='erub03@gmail.com', username='erub03')
 
 quotes = (
     '“We May Encounter Many Defeats But We Must Not Be Defeated.” – Maya Angelou',
@@ -25,14 +25,12 @@ quotes = (
     '“If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.” – Steve Jobs',
 )
 
-quote = random.choice(quotes)
-
 ##############
 # Exercise 1 #
 ##############
 @app.route('/')
 def exercise1():
-    return 'Hello, ' + current_user.first_name + ' ' + current_user.last_name + '!'
+    return 'Hello World!'
 
 
 ##############
@@ -42,8 +40,7 @@ def exercise1():
 def exercise2():
     return render_template(
         'quote-of-the-day.html',
-        user=current_user,
-        random_quote = quote
+        user=current_user
     )
 
 ##############
@@ -52,12 +49,8 @@ def exercise2():
 @app.route('/restaurant-data/')
 @app.route('/restaurant-data')
 def exercise3():
-    args = request.args
-    search_term = args.get('term')
-    location = args.get('location')
-    if not (search_term and location):
-        return '"location" and "term" are required query parameters'
-    
+    search_term = 'pizza'
+    location = 'Evanston, Il'
     url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&term={1}'.format(location, search_term)
     response = requests.get(url)
     data = response.json()
@@ -86,7 +79,7 @@ def exercise4():
         user=current_user,
         search_term=search_term,
         location=location,
-        restaurant=restaurants
+        restaurant=restaurants[0]
     )
 
 @app.route('/cards/')

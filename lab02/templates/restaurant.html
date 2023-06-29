@@ -10,13 +10,21 @@
 <body>
     {% include 'includes/header.html' %}
 
-    <main>
-        <p>Search location: {{location}}</p>
-        <p>Search term: {{search_term or 'None Specified'}}</p>
-        <p>Data: {{ restaurant }}</p>
-        <h2>Top Restaurant:</h2> 
-        <p>Name: {{ restaurant.get('name') }}</p>
-    </main>
+    <h1 id='site_title'> Top Restaurant for {{search_term or 'None Specified'}} food in {{location}}</h1> 
+
+    <section>
+        {% for counter in restaurant %}
+            <main>
+                <h2>{{ counter.get('name') }}</h2>
+                <img src={{counter.get('image_url')}} alt= 'Top Restaurant for' {{search_term or 'None Specified'}} 'food in' {{location}} />
+                <p>Price: {{ counter.get('price')}}</p>
+                <p>Rating: {{ counter.get('rating')}}</p>
+                <p>Number of reviews: {{ counter.get('review_count')}}</p>
+                <p>Address: {{ counter.get('display_address')}}</p>
+            </main>
+        {% endfor %}
+    </section>
+    
 </body>
 </html>
 

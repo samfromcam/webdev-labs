@@ -16,7 +16,7 @@ header {
 }
 
 nav ul {
-    width: 300px;
+    width: 250px;
     list-style-type: none;
     padding: 0px;
     display: flex;
@@ -25,26 +25,8 @@ nav ul {
 
 main {
     margin: 3vh;
-    border: 2px solid grey;
-    width: 24%;
-    padding: 2%;
 }
 
-main img {
-    width: 100%;
-}
-
-#site_title {
-    display: flex;
-    justify-content: center;
-}
-
-section {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
 
 @media only screen and (max-width: 1000px) {
     /* Media queries go here */
