@@ -1,0 +1,32 @@
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin: 0; */
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+section {
+    width: 33%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    /* your code */
+}
+
+@media only screen and (max-width: 600px) {
+    /* your code */
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Demo: Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Artist Tracks</h1>
+    <section>
+        <h2>{{tracks[5].get('name')}}</h2>
+        <h3>{{tracks[5].get('artist').get('name')}}</h3>
+        <audio controls>
+            <source src="{{tracks[5].get('preview_url')}}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio> <br>
+        <img src = "{{tracks[5].get('album').get('image_url')}}" /> <br>
+        
+          
+        <!--
+            Add an image tag and an audio tag. See
+            this reference if you need help: 
+            https://cs396-web-dev.github.io/spring2022/html-reference/media-tags/
+        -->
+
+        {{ tracks[5] }}
+    </section>
+
+</body>
+</html>
+
